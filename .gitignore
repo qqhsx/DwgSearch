@@ -1,0 +1,85 @@
+# =============================================================================
+# DWG Search Tool - Release-only Repository
+# 这个仓库只托管发布元数据（README、LICENSE、CHANGELOG、构建脚本）
+# 源代码、依赖、构建产物全部不提交
+# =============================================================================
+
+# Python 虚拟环境
+venv38/
+venv*/
+.env/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PyInstaller 构建产物
+build/
+dist/
+*.spec
+
+# .NET 构建产物
+DwgTextExtractor/bin/
+DwgTextExtractor/obj/
+DwgTextReplacer/bin/
+DwgTextReplacer/obj/
+*.pdb
+
+# 配置文件（可能包含本地路径/密钥）
+config.json
+*.user
+*.userprefs
+
+# IDE / 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 测试/临时文件
+*.log
+*.tmp
+*.temp
+test_*.py
+*_test.py
+
+# 安装包输出目录（本地打包时生成）
+release_dist/
+*.exe
+*.msi
+*.zip
+SHA256SUMS.txt
+
+# 密钥/证书
+*.pfx
+*.snk
+*.key
+*.pem
+*.cer
+*.crt
+
+# 大文件/二进制资源（不应提交到 git）
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# AccoreconsolePlugin 运行时库（打包时从本地引入，不提交）
+AccoreconsolePlugin/
+
+# 数据库/索引文件（运行时生成）
+*.db
+*.sqlite
+*.sqlite3
+index_*/
