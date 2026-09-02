@@ -14,7 +14,7 @@
 
 | 版本 | 类型 | 适用场景 | SHA256 |
 |------|------|----------|--------|
-| **[v2.19.0 安装版](https://github.com/qqhsx/dwg-search/releases/download/v2.19.0/DWG_Search_Setup_x64.exe)** | `.exe` (Inno Setup) | 首次安装、自动关联右键菜单、创建开始菜单快捷方式 | `见 Release 页面` |
+| **[v2.19.0 安装版](https://github.com/qqhsx/dwg-search/releases/download/v2.19.0/DWG_Search_Setup_x64_2.19.0.zip)** | `.zip` (解压即用) | 首次安装、解压运行、可手动创建快捷方式 | `见 Release 页面` |
 | **[v2.19.0 便携版](https://github.com/qqhsx/dwg-search/releases/download/v2.19.0/DWG_Search_Portable_x64.zip)** | `.zip` | 免安装、绿色运行、U 盘携带、多版本共存 | `见 Release 页面` |
 
 > **⚡ 提示**：便携版解压即用，无需管理员权限；安装版会注册右键菜单「用 DWG 图纸搜索工具搜索此目录」。
