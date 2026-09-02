@@ -1,12 +1,12 @@
-# DWG 图纸搜索工具
+# DwgSearch
 
 > **批量搜索 / 替换 DWG 图纸文件名与文字内容的桌面工具**
 > 基于 `accoreconsole` 无界面引擎读取图纸内容，本地建立索引，支持按文件名、正文内容关键词（含正则表达式）快速检索。
 
-![Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue)
+![Windows](https://img.shields.io/badge/Platform-Windows%207%2F10%2F11-blue)
 ![Version](https://img.shields.io/badge/Version-2.19.0-orange)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
-![Download](https://img.shields.io/github/downloads/qqhsx/dwg-search/total?label=Downloads)
+![Download](https://img.shields.io/github/downloads/qqhsx/DwgSearch/total?label=Downloads)
 
 ---
 
@@ -14,10 +14,9 @@
 
 | 版本 | 类型 | 适用场景 | SHA256 |
 |------|------|----------|--------|
-| **[v2.19.0 安装版](https://github.com/qqhsx/dwg-search/releases/download/v2.19.0/DWG_Search_Setup_x64_2.19.0.zip)** | `.zip` (解压即用) | 首次安装、解压运行、可手动创建快捷方式 | `见 Release 页面` |
-| **[v2.19.0 便携版](https://github.com/qqhsx/dwg-search/releases/download/v2.19.0/DWG_Search_Portable_x64.zip)** | `.zip` | 免安装、绿色运行、U 盘携带、多版本共存 | `见 Release 页面` |
+| **[v2.19.0 便携版](https://github.com/qqhsx/DwgSearch/releases/download/v2.19.0/DwgSearch_Portable_x64_v2.19.0.zip)** | `.zip` (单文件夹模式) | 免安装、绿色运行、U 盘携带、多版本共存、Win7/10/11 通用 | `见 Release 页面` |
 
-> **⚡ 提示**：便携版解压即用，无需管理员权限；安装版会注册右键菜单「用 DWG 图纸搜索工具搜索此目录」。
+> **⚡ 提示**：便携版解压即用，无需管理员权限；在 Windows 7 上运行需确保安装 .NET Framework 4.8。
 
 ---
 
@@ -29,7 +28,7 @@
 | **文件名搜索** | 支持通配符 `*` `?`、正则表达式、大小写敏感切换 |
 | **组合筛选** | 扩展名、修改日期范围、文件大小范围、图纸版本 |
 | **批量替换** | 支持正则替换、预览差异、撤销恢复、替换日志导出 |
-| **右键菜单集成** | 资源管理器右键文件夹 → 「用 DWG 图纸搜索工具搜索此目录」 |
+| **右键菜单集成** | 资源管理器右键文件夹 → 「用 DwgSearch 搜索此目录」 |
 | **书签收藏** | 一键保存常用「文件名+内容」搜索条件 |
 | **多窗口** | `Ctrl+Shift+N` 新建独立窗口，共享同一后台索引 |
 | **系统托盘** | 关闭窗口最小化到托盘，后台索引继续运行 |
@@ -42,31 +41,25 @@
 
 | 组件 | 要求 |
 |------|------|
-| **操作系统** | Windows 10 / 11 (x64) |
+| **操作系统** | Windows 7 SP1 / 8 / 10 / 11 (x64) |
 | **AutoCAD** | **可选** — 安装 AutoCAD 2018~2025 可启用 `accoreconsole` 高精度提取引擎；<br>未装 AutoCAD 时自动回退到纯 .NET `ACadSharp` 引擎（无需安装 CAD） |
-| **.NET Runtime** | 内置 `DwgTextReplacer.exe` 需 .NET Framework 4.8（Win10/11 预装） |
+| **.NET Runtime** | 内置 `DwgTextReplacer.exe` 需 .NET Framework 4.8（Win7 需手动安装，Win10/11 预装） |
 | **磁盘空间** | 索引约占原图纸总大小 5%~15%（视文字密度而定） |
 | **内存** | 建议 4 GB+；大量图纸并发索引时 8 GB+ 更流畅 |
 
 > **无 AutoCAD 也能用** — 纯 .NET 引擎覆盖 90%+ 常见图纸格式，仅极少数复杂代理图形/自定义对象需 AutoCAD 引擎。
+> **Windows 7 支持** — 在 Win7 环境下打包，确保兼容性；运行时需安装 .NET Framework 4.8 和 VC++ 2015-2022 运行库。
 
 ---
 
 ## 🚀 快速开始
 
-### 便携版（推荐新用户）
+### 便携版（唯一发布版本）
 ```powershell
-# 1. 下载 DWG_Search_Portable_x64.zip
-# 2. 解压到任意文件夹（如 D:\Tools\DWG_Search）
-# 3. 双击 DWG_Search.exe 运行
+# 1. 下载 DwgSearch_Portable_x64_v2.19.0.zip
+# 2. 解压到任意文件夹（如 D:\Tools\DwgSearch）
+# 3. 双击 DwgSearchApp.exe 运行
 # 4. 点击「添加搜索目录」选择图纸文件夹 → 「开始索引」 → 等待完成即可搜索
-```
-
-### 安装版
-```powershell
-# 1. 下载 DWG_Search_Setup_x64.exe
-# 2. 以管理员身份运行安装向导
-# 3. 完成后，资源管理器右键任意文件夹即可看到「用 DWG 图纸搜索工具搜索此目录」
 ```
 
 ---
@@ -121,12 +114,12 @@
 
 ```powershell
 # PowerShell 验证
-Get-FileHash -Algorithm SHA256 DWG_Search_Setup_x64.exe
+Get-FileHash -Algorithm SHA256 DwgSearch_Portable_x64_v2.19.0.zip
 # 对比 Release 页面的 SHA256SUMS.txt 内容
 ```
 
 - 代码签名：暂无 EV 代码签名证书，Windows SmartScreen 可能提示「未识别的应用」— 点击「更多信息」→「仍要运行」
-- 杀毒误报：PyInstaller 打包的单文件/单文件夹模式极易被启发式查杀，属误报。可上传 [VirusTotal](https://www.virustotal.com/) 多引擎查杀确认
+- 杀毒误报：PyInstaller 打包的单文件夹模式极易被启发式查杀，属误报。可上传 [VirusTotal](https://www.virustotal.com/) 多引擎查杀确认
 
 ---
 
@@ -134,7 +127,7 @@ Get-FileHash -Algorithm SHA256 DWG_Search_Setup_x64.exe
 
 | 渠道 | 说明 |
 |------|------|
-| **GitHub Issues** | [提交 Bug / 功能建议](https://github.com/qqhsx/dwg-search/issues) — 请附上：版本号、操作系统、复现步骤、错误截图/日志 |
+| **GitHub Issues** | [提交 Bug / 功能建议](https://github.com/qqhsx/DwgSearch/issues) — 请附上：版本号、操作系统、复现步骤、错误截图/日志 |
 | **邮箱** | `qqhsx@qq.com`（仅限无法公开的安全/隐私问题） |
 
 **常见问题自查**：
@@ -149,7 +142,6 @@ Get-FileHash -Algorithm SHA256 DWG_Search_Setup_x64.exe
 - [ACadSharp](https://github.com/ACadSharp/ACadSharp) — 纯 .NET DWG/DXF 读写库
 - [PyInstaller](https://pyinstaller.org/) — Python 打包工具
 - [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) — GUI 框架
-- [Inno Setup](https://jrsoftware.org/isinfo.php) — 安装包制作
 
 ---
 
@@ -157,7 +149,7 @@ Get-FileHash -Algorithm SHA256 DWG_Search_Setup_x64.exe
 
 - **GitHub**: [@qqhsx](https://github.com/qqhsx)
 - **Email**: qqhsx@qq.com
-- **主页**: https://github.com/qqhsx/dwg-search
+- **主页**: https://github.com/qqhsx/DwgSearch
 
 ---
 
