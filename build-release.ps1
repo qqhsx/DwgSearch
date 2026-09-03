@@ -1,4 +1,4 @@
-<#>
+﻿<#>
 .SYNOPSIS
     DwgSearch - Build Portable Release Script
     Usage: Run in PowerShell as Administrator on Windows 7 build machine
@@ -98,7 +98,7 @@ if (-not $SkipBuild) {
         $csproj = Get-ChildItem $projPath -Filter "*.csproj" | Select-Object -First 1
         if ($csproj) {
             $exeName = $csproj.BaseName + ".exe"
-            $exePath = Join-Path $projPath ("bin\{0}\{1}\{2}" -f $proj.Config, $proj.Framework, $exeName)
+            $exePath = Join-Path $projPath ("bin\\{0}\\{1}\\{2}" -f $proj.Config, $proj.Framework, $exeName)
             if (-not (Test-Path $exePath)) {
                 Write-Log ("  Building {0}..." -f $proj.Path)
                 $result = dotnet build $csproj.FullName -c $proj.Config -f $proj.Framework --no-restore
@@ -114,7 +114,7 @@ if (-not $SkipBuild) {
 if (-not $SkipBuild) {
     Write-Log "Building: Folder mode (build.spec) - Portable..."
     $specFile = Join-Path $ProjectRoot "build.spec"
-    $result = & $PyInstaller $specFile --clean --noconfirm
+    $result = & $VenVPython -m PyInstaller $specFile --clean --noconfirm
     if ($LASTEXITCODE -ne 0) { Write-Log "[ERROR] Folder mode build failed"; exit 1 }
     
     $folderModeDir = Join-Path $DistDir $FolderModeExeName
