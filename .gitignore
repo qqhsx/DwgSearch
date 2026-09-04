@@ -26,6 +26,22 @@ DwgTextReplacer/bin/
 DwgTextReplacer/obj/
 *.pdb
 
+# ===== 源码目录/文件（本地保留，不进 Git）=====
+DwgTextExtractor/
+DwgTextReplacer/
+*.py
+*.cs
+*.csproj
+*.spec
+*.ico
+*.config
+*.bak
+
+# 临时调试脚本
+cleanup-github.ps1
+upload-*.ps1
+fix-*.ps1
+
 # 配置文件（可能包含本地路径/密钥）
 config.json
 *.user
